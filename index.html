@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>சமூக சங்கம் – முகப்பு</title>
+<link href="https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f8ff;--card:#fff;--ink:#12305e;--mute:#5a6b85;--navy:#0b2350;--fest:#fff4d6;--line:#dbe6f7;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1526;--card:#16213a;--ink:#e6eeff;--mute:#9fb0d0;--fest:#3a3218;--line:#263557}}
+:root[data-theme="dark"]{--bg:#0d1526;--card:#16213a;--ink:#e6eeff;--mute:#9fb0d0;--fest:#3a3218;--line:#263557}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Mukta Malar","Noto Sans Tamil",sans-serif;padding-bottom:84px}
+.app{max-width:520px;margin:0 auto}
+.hero{display:flex;gap:12px;align-items:center;padding:18px 16px 20px;background:linear-gradient(120deg,#cfe6ff,#fff6d8 70%,#d9f0c8)}
+.logo{flex:none;width:84px;height:84px;border-radius:50%;border:5px solid #d9a521;background:radial-gradient(circle,#ffd45c,#2f6fbf);display:grid;place-items:center;font-size:34px}
+.hero h1{margin:0;font-size:21px;line-height:1.25;color:#0b2350;font-weight:800}
+.hero p{margin:4px 0 0;font-size:14px;color:#0b2350}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:12px}
+.stat{border-radius:14px;padding:12px 10px;color:#fff;min-height:88px;display:flex;flex-direction:column;justify-content:space-between}
+.stat span{font-size:13px;line-height:1.2}
+.stat b{font-size:28px;line-height:1}
+.s1{background:#1f5fd0}.s2{background:#e8930c}.s3{background:#2f9e54}.s4{background:#7a45d6}.s5{background:#1fa5b8}.s6{background:#e8457a}
+.box{margin:0 12px 12px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px}
+.fest{background:var(--fest);display:flex;gap:12px}
+.fest .pic{flex:none;width:104px;border-radius:10px;background:linear-gradient(160deg,#f7c948,#a8321f);display:grid;place-items:center;font-size:44px}
+.fest small{color:#c2264b;font-weight:600}
+.fest h2{margin:2px 0 6px;font-size:19px}
+.fest p{margin:2px 0;font-size:14px;color:var(--mute)}
+.btn{display:inline-block;margin-top:8px;background:var(--navy);color:#fff;border:0;border-radius:20px;padding:6px 14px;font:inherit;font-size:14px}
+.head{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.head h3{margin:0;font-size:17px}
+.head a{font-size:13px;color:#1f5fd0;font-weight:600}
+.photos{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.photos div{aspect-ratio:3/4;border-radius:8px}
+.ph1{background:linear-gradient(#7cc47a,#d08a2a)}.ph2{background:linear-gradient(#f0a13a,#c23b6a)}.ph3{background:linear-gradient(#3f8f4c,#f2cf4a)}.ph4{background:linear-gradient(#161a3a,#c74bd6)}
+.notes{list-style:none;margin:0;padding:0}
+.notes li{display:flex;align-items:center;gap:8px;padding:7px 0;font-size:14px;border-top:1px solid var(--line)}
+.notes li:first-child{border-top:0}
+.dot{flex:none;width:9px;height:9px;border-radius:50%}
+.notes time{margin-left:auto;color:var(--mute);font-size:12px;white-space:nowrap}
+.contact{display:flex;align-items:center;gap:10px}
+.contact .ic{flex:none;width:42px;height:42px;border-radius:50%;background:#2f9e54;color:#fff;display:grid;place-items:center;font-size:20px}
+.contact div{flex:1;font-size:14px}
+.contact small{color:var(--mute)}
+.gm{background:#1a6b4a;color:#fff;border-radius:10px;padding:9px 12px;text-decoration:none;font-size:14px;font-weight:600}
+nav{position:fixed;left:0;right:0;bottom:0;background:var(--navy);display:flex;justify-content:space-around;padding:8px 2px calc(8px + env(safe-area-inset-bottom,0px));overflow-x:auto}
+nav button{flex:1;min-width:52px;background:none;border:0;color:#b8c8ea;font:inherit;font-size:11px;display:flex;flex-direction:column;align-items:center;gap:2px;padding:4px 0;border-radius:12px}
+nav button i{font-style:normal;font-size:20px}
+nav button.on{background:#1f5fd0;color:#fff}
+nav button:focus-visible{outline:2px solid #ffd45c}
+.panel{display:none;padding:16px 12px;color:var(--mute)}
+.seg{display:flex;gap:6px;margin-bottom:12px}
+.seg button{flex:1;padding:9px 6px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);font:inherit;font-size:15px}
+.seg button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.bar{display:flex;justify-content:space-between;align-items:center;margin:0 0 10px;color:var(--ink)}
+.bar b{font-size:17px}
+.add{background:#2f9e54;color:#fff;border:0;border-radius:10px;padding:8px 14px;font:inherit;font-size:14px;font-weight:600}
+.frm{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px;color:var(--ink)}
+.frm label{display:block;font-size:13px;color:var(--mute);margin:8px 0 3px}
+.frm input{width:100%;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:15px;background:var(--bg);color:var(--ink)}
+.frm .row{display:flex;gap:8px;margin-top:12px}
+.frm .row button{flex:1;padding:9px;border-radius:10px;border:0;font:inherit;font-size:15px}
+.frm .ok{background:#1f5fd0;color:#fff}.frm .no{background:var(--line);color:var(--ink)}
+.err{color:#d43b3b;font-size:13px;margin-top:6px}
+.item{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:8px;color:var(--ink)}
+.av{flex:none;width:40px;height:40px;border-radius:50%;background:#1f5fd0;color:#fff;display:grid;place-items:center;font-weight:800;font-size:17px}
+.item .t{flex:1;min-width:0}
+.item .t b{display:block;font-size:16px}
+.item .t span{font-size:13px;color:var(--mute)}
+.item .t a{color:#1f5fd0;text-decoration:none}
+.ib{flex:none;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:8px;padding:6px 9px;font:inherit;font-size:13px}
+.ib.del{color:#d43b3b}
+.empty{text-align:center;padding:24px 8px;color:var(--mute);font-size:14px}
+.stat[data-go]{cursor:pointer}
+body:not(.adm) .add,body:not(.adm) .ib,body:not(.adm) #edt,body:not(.adm) #strip,body:not(.adm) .frm:not(.sf),body:not(.adm) .lb [data-l="cap"],body:not(.adm) .lb [data-l="del"]{display:none!important}
+.sf{margin-bottom:12px}
+.sf h3{margin:0 0 6px;font-size:18px}
+.sf p{margin:0 0 8px;font-size:14px;color:var(--mute);line-height:1.5}
+.big{display:block;width:100%;padding:14px;border:0;border-radius:14px;background:linear-gradient(#2f6fe8,#1a4fc4);color:#fff;font:inherit;font-size:17px;font-weight:600;margin-top:10px}
+.big.gr{background:var(--line);color:var(--ink)}
+.drop{border:2px dashed var(--line);border-radius:14px;padding:12px;margin-top:10px;font-size:14px;color:var(--mute)}
+.drop input{max-width:100%}
+.sm{font-size:14px;margin-top:8px;color:#1f5fd0}
+.sb.fw{display:block;width:100%;padding:12px;font-size:16px;margin-top:10px;text-align:center}
+.frm h3{margin:0 0 6px;font-size:18px}
+.frm p{margin:0 0 6px;font-size:14px;color:var(--mute);line-height:1.5}
+.frm .up.gr{color:var(--ink)}
+body.lock .add,body.lock .ib,body.lock .edt,body.lock .strip,body.lock .lb [data-l="cap"],body.lock .lb [data-l="del"]{display:none!important}
+.bt{display:flex;flex-direction:column;gap:6px;flex:none}
+.srch{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:15px;background:var(--card);color:var(--ink);margin-bottom:10px}
+.frm textarea{width:100%;min-height:90px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:15px;background:var(--bg);color:var(--ink);resize:vertical}
+.ab{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;color:var(--ink)}
+.ab h2{margin:0 0 4px;font-size:21px}
+.ab .mo{color:#c2264b;font-weight:600;margin-bottom:8px}
+.ab .mt{font-size:14px;color:var(--mute);margin:2px 0}
+.ab h4{margin:14px 0 4px;font-size:16px}
+.ab p{margin:0;white-space:pre-wrap;line-height:1.5}
+.ab ul{margin:0;padding-left:20px;line-height:1.6}
+.contact{flex-wrap:wrap}
+.contact .ib{flex:none}
+.contact a.tl{color:#1f5fd0;text-decoration:none}
+.hint{font-size:12px;color:var(--mute);margin-top:4px}
+.fp{flex:none;width:64px;height:64px;border-radius:10px;background:linear-gradient(160deg,#f7c948,#a8321f) center/cover no-repeat;display:grid;place-items:center;font-size:28px}
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.pg div{aspect-ratio:1;border-radius:8px;background:var(--line) center/cover no-repeat;cursor:pointer}
+.add.up{color:#fff}
+.lb{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px}
+.lb img{max-width:100%;max-height:68vh;border-radius:8px}
+.lb .cap{color:#fff;font-size:15px;text-align:center;min-height:20px}
+.lb .lbb{display:flex;gap:8px}
+.av.ph{background-size:cover;background-position:center;font-size:0}
+.pv{flex:none;width:60px;height:60px;border-radius:50%;background:var(--line) center/cover no-repeat;display:grid;place-items:center;font-size:26px}
+.frm .up{display:inline-block;margin:0;color:#fff;font-size:14px}
+.frm .prow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.hero{position:relative;background-size:cover;background-position:right center}
+.hero.has-bg::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.92) 0%,rgba(255,255,255,.78) 45%,rgba(255,255,255,0) 100%)}
+.hero>*{position:relative;z-index:1}
+.logo.has-img{border:0;border-radius:0;background-color:transparent;background-size:contain;background-repeat:no-repeat;background-position:center;font-size:0;width:96px;height:96px}
+.edt{position:absolute!important;top:8px;right:8px;z-index:2;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.85);font-size:16px}
+.strip{display:flex;flex-wrap:wrap;gap:8px;padding:10px 12px;background:var(--card);border-bottom:1px solid var(--line)}
+.strip[hidden]{display:none}
+.sb{background:#1f5fd0;color:#fff;border:0;border-radius:10px;padding:8px 12px;font:inherit;font-size:14px;cursor:pointer}
+.sb.gr{background:var(--line);color:var(--ink)}
+.up{position:relative;overflow:hidden;display:inline-block}
+.up input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:0}
+#imsg{font-size:13px;color:var(--mute);width:100%}
+#bimg{display:block;width:100%;height:auto}
+#bimg[hidden]{display:none}
+.hero.has-banner{display:block;padding:0;background:none}
+.hero.has-banner>.logo,.hero.has-banner>.htxt{display:none}
+</style>
+</head>
+<body>
+<div class="app">
+<div id="home">
+  <header class="hero" id="hero">
+    <button class="edt" id="edt" aria-label="படத்தை மாற்று">✏️</button>
+    <img id="bimg" alt="முகப்புப் படம்" hidden>
+    <div class="logo" id="logo">🛕</div>
+    <div class="htxt">
+      <h1>சமூக சங்கம்<br>(தெற்கு தெரு)</h1>
+      <p>📍 குனியமுத்தூர், கோவை – 641008</p>
+    </div>
+  </header>
+  <div class="strip" id="strip" hidden>
+    <label class="sb up">🖼 முகப்புப் படம் (JPEG) பதிவேற்று<input type="file" accept="image/*" id="in-banner"></label>
+    <button class="sb gr" id="rst">↺ மீட்டமை</button>
+    <div id="imsg">கோவில் + பெயர் உள்ள முழு முகப்புப் படத்தைத் தேர்ந்தெடுக்கவும்.</div>
+  </div>
+
+  <section class="stats">
+    <div class="stat s1" data-go="members" role="button" tabindex="0"><span>மொத்த உறுப்பினர்கள்</span><b id="c-members">0</b></div>
+    <div class="stat s2" data-go="admins" role="button" tabindex="0"><span>நிர்வாகிகள்</span><b id="c-admins">0</b></div>
+    <div class="stat s3" data-go="committee" role="button" tabindex="0"><span>நிர்வாகக் குழு</span><b id="c-committee">0</b></div>
+    <div class="stat s4"><span>ஆலோசனைக் குழு</span><b>8</b></div>
+    <div class="stat s5" data-go="festivals" role="button" tabindex="0"><span>திருவிழாக்கள்</span><b id="c-festivals">0</b></div>
+    <div class="stat s6" data-go="photos" role="button" tabindex="0"><span>புகைப்படங்கள்</span><b id="c-photos">0</b></div>
+  </section>
+
+  <section class="box fest" id="festcard"></section>
+
+  <section class="box">
+    <div class="head"><h3>சமீபத்திய புகைப்படங்கள்</h3><a href="#" data-tab="புகைப்படங்கள்">அனைத்தும் பார்க்க</a></div>
+    <div class="photos" id="phstrip"><div class="ph1"></div><div class="ph2"></div><div class="ph3"></div><div class="ph4"></div></div>
+  </section>
+
+  <section class="box">
+    <div class="head"><h3>சமீபத்திய அறிவிப்புகள்</h3><a href="#">அனைத்தும் பார்க்க</a></div>
+    <ul class="notes">
+      <li><span class="dot" style="background:#2f9e54"></span>சங்க பொதுக்குழு கூட்டம் – அழைப்பு<time>01.07.2025</time></li>
+      <li><span class="dot" style="background:#e8930c"></span>ஆடி பெருக்கு திருவிழா – ஏற்பாடுகள் குறித்த அறிவிப்பு<time>28.06.2025</time></li>
+      <li><span class="dot" style="background:#1f5fd0"></span>புதிய உறுப்பினர்கள் சேர்க்கை தொடங்கப்பட்டுள்ளது<time>20.06.2025</time></li>
+    </ul>
+  </section>
+
+  <section class="box contact" id="contact"></section>
+</div>
+<div class="panel" id="other"></div>
+</div>
+
+<nav id="nav" aria-label="முதன்மை மெனு">
+  <button class="on" data-t="முகப்பு"><i>🏠</i>முகப்பு</button>
+  <button data-t="சங்கம்"><i>🏛</i>சங்கம்</button>
+  <button data-t="நிர்வாகம்"><i>👤</i>நிர்வாகம்</button>
+  <button data-t="உறுப்பினர்கள்"><i>👥</i>உறுப்பினர்கள்</button>
+  <button data-t="திருவிழாக்கள்"><i>🛕</i>திருவிழாக்கள்</button>
+  <button data-t="புகைப்படங்கள்"><i>🖼</i>புகைப்படங்கள்</button>
+  <button data-t="அறிவிப்புகள்"><i>🔔</i>அறிவிப்புகள்</button>
+  <button data-t="தொடர்பு"><i>📞</i>தொடர்பு</button>
+  <button data-t="அமைப்புகள்"><i>⚙️</i>அமைப்புகள்</button>
+  <button data-t="அமைப்புகள்"><i>⚙️</i>அமைப்புகள்</button>
+</nav>
+<script>
+var KEY='sangam_v2',D={admins:[{id:1,name:'K.L.ரகுவீரமணி',role:'சமூக தலைவர்',phone:''},{id:2,name:'K.C.A.ரவிக்குமார்',role:'சமூக செயலாளர்',phone:''},{id:3,name:'K.கதிரவன்',role:'சமூக பொருளாளர்',phone:''},{id:4,name:'K.C.நாகராஜ்',role:'சமூக துணை தலைவர்',phone:''},{id:5,name:'K.P.ஆனந்தன்',role:'சமூக துணை செயலாளர்',phone:''}],committee:[{id:100,name:'K.P.பாஸ்கரன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:101,name:'V.சிவக்குமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:102,name:'M.பேச்சியப்பன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:103,name:'K.சிவக்குமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:104,name:'R.செல்வகுமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:105,name:'K.பாலசந்திரன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:106,name:'K.R.முருகேசன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:107,name:'A.தர்மன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:108,name:'M.முகுந்தன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:109,name:'K.K.S.பொன்ராஜ்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:110,name:'M.ஜெகதீசன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:111,name:'S.செல்வம்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:112,name:'R.ராஜ்குமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:113,name:'V.மகேஷ்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:114,name:'K.C.A.சிவக்குமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:115,name:'A.ஈஸ்வரன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:116,name:'C.மதன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:117,name:'K.கணேசன் சசி',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:118,name:'K.K.S.செந்தில்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:119,name:'V.ஜோதிபாசு',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:120,name:'S.கங்காதரன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:121,name:'S.ரகுபதி',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:122,name:'M.கணேசன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:123,name:'M.ராஜேஷ்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:124,name:'R.உதயகுமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:125,name:'K.கிருஷ்ணன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:126,name:'K.C.ராஜ்குமார்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:127,name:'P.அருண்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:128,name:'S.கார்த்திக் கிருஷ்ணன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:129,name:'M.அமிர்தராஜ்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:130,name:'M.ஜெகதீசன் மோகன்',role:'நிர்வாக குழு உறுப்பினர்',phone:''},{id:131,name:'A.நாகேந்திரன்',role:'சமூக ஒடும்பிள்ளை பண்ணாடி',phone:''}]},cur='admins',editId=null,formOpen=false,errMsg='',pPhoto='';
+try{var sv=JSON.parse(localStorage.getItem(KEY));if(sv&&sv.admins&&sv.committee)D=sv}catch(e){}
+D.festivals=D.festivals||[];D.members=D.members||[];
+var nav=document.getElementById('nav'),home=document.getElementById('home'),other=document.getElementById('other');
+function save(){try{localStorage.setItem(KEY,JSON.stringify(D))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function counts(){document.getElementById('c-admins').textContent=D.admins.length;document.getElementById('c-committee').textContent=D.committee.length;document.getElementById('c-festivals').textContent=D.festivals.length;document.getElementById('c-members').textContent=D.members.length;document.getElementById('c-photos').textContent=(PH||[]).length}
+function showTab(t){
+  nav.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x.getAttribute('data-t')===t)});
+  if(t==='முகப்பு'){home.style.display='';other.style.display='none';renderHome()}
+  else{home.style.display='none';other.style.display='block';
+    if(t==='நிர்வாகம்')render();else if(t==='திருவிழாக்கள்')renderFest();else if(t==='புகைப்படங்கள்')renderPhotos();else if(t==='சங்கம்')renderAbout();else if(t==='உறுப்பினர்கள்')renderMembers();else if(t==='அமைப்புகள்')renderSettings();else if(t==='அமைப்புகள்')renderSettings();else other.innerHTML='<div class="empty">'+esc(t)+' பக்கம் விரைவில் சேர்க்கப்படும்.</div>'}
+  window.scrollTo(0,0);
+}
+function render(){
+  var L=D[cur],adm=cur==='admins',title=adm?'நிர்வாகிகள்':'நிர்வாகக் குழு';
+  var it=editId?L.filter(function(x){return x.id===editId})[0]||{}:{};
+  var h='<div class="seg"><button data-seg="admins" class="'+(adm?'on':'')+'">நிர்வாகிகள் ('+D.admins.length+')</button><button data-seg="committee" class="'+(!adm?'on':'')+'">நிர்வாகக் குழு ('+D.committee.length+')</button></div>';
+  h+='<div class="bar"><b>'+title+'</b><button class="add" data-act="add">+ சேர்க்க</button></div>';
+  if(formOpen){
+    h+='<div class="frm"><b>'+(editId?'திருத்து':'புதியவர் சேர்க்க')+'</b>'+
+    '<label for="f-name">பெயர்</label><input id="f-name" value="'+esc(it.name||'')+'">'+
+    '<label for="f-role">'+(adm?'பொறுப்பு (தலைவர், செயலாளர்… – "சமூக" தானாகச் சேரும்)':'பதவி / குறிப்பு')+'</label><input id="f-role" value="'+esc(it.role||'')+'">'+
+    '<label for="f-phone">தொலைபேசி</label><input id="f-phone" type="tel" inputmode="tel" value="'+esc(it.phone||'')+'">'+
+    '<label>படம்</label><div class="prow"><div class="pv" id="f-pv" style="'+(pPhoto?"background-image:url('"+pPhoto+"')":'')+'">'+(pPhoto?'':'👤')+'</div><label class="sb up">📷 படம் தேர்வு<input type="file" accept="image/*" id="f-photo"></label><button class="sb gr" data-act="rmphoto">நீக்கு</button></div>'+
+    (errMsg?'<div class="err">'+errMsg+'</div>':'')+
+    '<div class="row"><button class="ok" data-act="save">சேமி</button><button class="no" data-act="cancel">ரத்து</button></div></div>';
+  }
+  if(!L.length)h+='<div class="empty">இன்னும் யாரும் சேர்க்கப்படவில்லை. "+ சேர்க்க" அழுத்தவும்.</div>';
+  L.forEach(function(x,i){
+    h+='<div class="item">'+(x.photo?'<div class="av ph" style="background-image:url(\''+x.photo+'\')"></div>':'<div class="av">'+esc(x.name.charAt(0))+'</div>')+'<div class="t"><b>'+esc(x.name)+'</b><span>'+esc(x.role||'')+(x.phone?(x.role?' · ':'')+'<a href="tel:'+esc(x.phone)+'">'+esc(x.phone)+'</a>':'')+'</span></div>'+
+    '<button class="ib" data-act="edit" data-id="'+x.id+'">திருத்து</button><button class="ib del" data-act="del" data-id="'+x.id+'">நீக்கு</button></div>';
+  });
+  other.innerHTML=h;
+  if(formOpen){var f=document.getElementById('f-name');if(f)f.focus()}
+}
+other.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  var seg=b.getAttribute('data-seg'),act=b.getAttribute('data-act'),id=+b.getAttribute('data-id');
+  if(seg){cur=seg;formOpen=false;editId=null;errMsg='';render();return}
+  if(act==='add'){formOpen=true;editId=null;errMsg='';pPhoto='';render()}
+  else if(act==='cancel'){formOpen=false;editId=null;errMsg='';render()}
+  else if(act==='edit'){var ex=D[cur].filter(function(x){return x.id===id})[0];pPhoto=(ex&&ex.photo)||'';formOpen=true;editId=id;errMsg='';render();window.scrollTo(0,0)}
+  else if(act==='rmphoto'){pPhoto='';updPv()}
+  else if(act==='del'){
+    if(confirm('இவரை நீக்கவா?')){D[cur]=D[cur].filter(function(x){return x.id!==id});save();counts();render()}
+  }else if(act==='save'){
+    var n=document.getElementById('f-name').value.trim(),r=document.getElementById('f-role').value.trim(),p=document.getElementById('f-phone').value.trim();
+    if(!n){errMsg='பெயர் அவசியம்.';render();return}
+    if(cur==='admins'&&r&&r.indexOf('சமூக')!==0)r='சமூக '+r;
+    if(editId){D[cur].forEach(function(x){if(x.id===editId){x.name=n;x.role=r;x.phone=p;x.photo=pPhoto}})}
+    else D[cur].push({id:Date.now(),name:n,role:r,phone:p,photo:pPhoto});
+    formOpen=false;editId=null;errMsg='';save();counts();render();
+  }
+});
+function updPv(){var el=document.getElementById('f-pv');if(!el)return;el.style.backgroundImage=pPhoto?"url('"+pPhoto+"')":'';el.textContent=pPhoto?'':'👤'}
+other.addEventListener('change',function(e){
+  if(e.target.id!=='f-photo')return;
+  var f=e.target.files&&e.target.files[0];if(!f)return;
+  var fr=new FileReader();
+  fr.onload=function(){var im=new Image();
+    im.onload=function(){
+      try{var m=Math.min(im.width,im.height),c=document.createElement('canvas');c.width=c.height=240;
+        c.getContext('2d').drawImage(im,(im.width-m)/2,(im.height-m)/2,m,m,0,0,240,240);
+        pPhoto=c.toDataURL('image/jpeg',0.85)}catch(x){pPhoto=fr.result}
+      updPv()};
+    im.onerror=function(){alert('இந்தப் படத்தைத் திறக்க முடியவில்லை.')};
+    im.src=fr.result};
+  fr.readAsDataURL(f);e.target.value='';
+});
+nav.addEventListener('click',function(e){var b=e.target.closest('button');if(b)showTab(b.getAttribute('data-t'))});
+function goStat(e){var c=e.target.closest('[data-go]');if(!c)return;var g=c.getAttribute('data-go');if(g==='members'){showTab('உறுப்பினர்கள்');return}if(g==='festivals'){showTab('திருவிழாக்கள்');return}if(g==='photos'){showTab('புகைப்படங்கள்');return}cur=g;formOpen=false;editId=null;showTab('நிர்வாகம்')}
+document.querySelector('.stats').addEventListener('click',goStat);
+document.querySelector('.stats').addEventListener('keydown',function(e){if(e.key==='Enter')goStat(e)});
+var IK='sangam_banner_v1',IM={};
+try{IM=JSON.parse(localStorage.getItem(IK))||{}}catch(e){}
+var hero=document.getElementById('hero'),bimg=document.getElementById('bimg'),strip=document.getElementById('strip'),imsg=document.getElementById('imsg');
+function applyImg(){
+  if(IM.banner){bimg.src=IM.banner;bimg.hidden=false;hero.classList.add('has-banner')}
+  else{bimg.hidden=true;bimg.removeAttribute('src');hero.classList.remove('has-banner')}
+}
+function saveImg(){try{localStorage.setItem(IK,JSON.stringify(IM));return true}catch(e){return false}}
+function setBanner(d){
+  var o=IM.banner;IM.banner=d;
+  if(saveImg()){applyImg();imsg.textContent='✔ படம் சேர்க்கப்பட்டது.'}
+  else{IM.banner=o;imsg.textContent='சேமிக்க முடியவில்லை; சிறிய அளவிலான படத்தைப் பயன்படுத்தவும்.'}
+}
+document.getElementById('edt').addEventListener('click',function(){strip.hidden=!strip.hidden});
+document.getElementById('in-banner').addEventListener('change',function(e){
+  var f=e.target.files&&e.target.files[0];if(!f)return;
+  imsg.textContent='படம் ஏற்றப்படுகிறது…';
+  var fr=new FileReader();
+  fr.onerror=function(){imsg.textContent='கோப்பைப் படிக்க முடியவில்லை.'};
+  fr.onload=function(){
+    var raw=fr.result,im=new Image();
+    im.onload=function(){
+      try{
+        var r=Math.min(1,1200/im.width),c=document.createElement('canvas');
+        c.width=Math.round(im.width*r);c.height=Math.round(im.height*r);
+        c.getContext('2d').drawImage(im,0,0,c.width,c.height);
+        setBanner(c.toDataURL('image/jpeg',0.88));
+      }catch(x){setBanner(raw)}
+    };
+    im.onerror=function(){imsg.textContent='இந்தப் படத்தைத் திறக்க முடியவில்லை. JPEG/PNG பயன்படுத்தவும்.'};
+    im.src=raw;
+  };
+  fr.readAsDataURL(f);
+  e.target.value='';
+});
+document.getElementById('rst').addEventListener('click',function(){if(confirm('முகப்புப் படத்தை நீக்கவா?')){IM={};saveImg();applyImg();imsg.textContent='மீட்டமைக்கப்பட்டது.'}});
+applyImg();
+var PH=[],idb=null,fOpen=false,fEdit=null,fPhoto='',fErr='';
+function idbGet(k,cb){try{var q=idb.transaction('kv').objectStore('kv').get(k);q.onsuccess=function(){cb(q.result)};q.onerror=function(){cb(null)}}catch(e){cb(null)}}
+function idbSet(k,v){try{idb.transaction('kv','readwrite').objectStore('kv').put(v,k)}catch(e){}}
+try{var rq=indexedDB.open('sangam',1);
+  rq.onupgradeneeded=function(){rq.result.createObjectStore('kv')};
+  rq.onsuccess=function(){idb=rq.result;idbGet('photos',function(v){PH=v||[];counts();renderHome();if(other.style.display==='block'&&document.querySelector('.pg,#p-add'))renderPhotos()})}
+}catch(e){}
+function resizeFile(f,max,q,cb){
+  var fr=new FileReader();fr.onerror=function(){cb(null)};
+  fr.onload=function(){var im=new Image();
+    im.onload=function(){try{var r=Math.min(1,max/im.width),c=document.createElement('canvas');c.width=Math.round(im.width*r);c.height=Math.round(im.height*r);c.getContext('2d').drawImage(im,0,0,c.width,c.height);cb(c.toDataURL('image/jpeg',q))}catch(x){cb(fr.result)}};
+    im.onerror=function(){cb(null)};im.src=fr.result};
+  fr.readAsDataURL(f);
+}
+var DAYS=['ஞாயிறு','திங்கள்','செவ்வாய்','புதன்','வியாழன்','வெள்ளி','சனி'];
+function fmtDate(d){if(!d)return'';var p=d.split('-');if(p.length<3)return d;var w=new Date(+p[0],+p[1]-1,+p[2]).getDay();return p[2]+'.'+p[1]+'.'+p[0]+' ('+DAYS[w]+')'}
+function todayStr(){var t=new Date(),m=t.getMonth()+1,d=t.getDate();return t.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(d<10?'0':'')+d}
+function sortedFest(){return D.festivals.slice().sort(function(a,b){return (a.date||'9999').localeCompare(b.date||'9999')})}
+function renderHome(){
+  var L=sortedFest(),t=todayStr(),f=null,up=false,i;
+  for(i=0;i<L.length;i++){if(L[i].date&&L[i].date>=t){f=L[i];up=true;break}}
+  if(!f&&L.length)f=L[L.length-1];
+  var el=document.getElementById('festcard');
+  if(f){el.innerHTML='<div class="pic" style="'+(f.photo?'background:center/cover no-repeat url('+f.photo+')':'')+'">'+(f.photo?'':'🪔')+'</div><div><small>'+(up?'வரவிருக்கும் திருவிழா':'கடைசியாக நடந்த திருவிழா')+'</small><h2>'+esc(f.name)+'</h2>'+(f.date?'<p>🗓 '+esc(fmtDate(f.date))+'</p>':'')+(f.time?'<p>🕘 '+esc(f.time)+'</p>':'')+(f.place?'<p>📍 '+esc(f.place)+'</p>':'')+'<button class="btn" data-tab="திருவிழாக்கள்">முழு விவரங்கள் பார்க்க</button></div>'}
+  else el.innerHTML='<div class="pic">🪔</div><div><small>வரவிருக்கும் திருவிழா</small><h2>இன்னும் சேர்க்கப்படவில்லை</h2><button class="btn" data-tab="திருவிழாக்கள்">திருவிழா சேர்க்க</button></div>';
+  var k=document.querySelectorAll('#phstrip div');
+  for(i=0;i<k.length;i++){var p=PH[PH.length-1-i];k[i].style.backgroundImage=p?'url('+p.src+')':'';k[i].style.backgroundSize='cover';k[i].style.backgroundPosition='center'}
+}
+function gPv(){var el=document.getElementById('g-pv');if(!el)return;el.style.backgroundImage=fPhoto?'url('+fPhoto+')':'';el.textContent=fPhoto?'':'🪔'}
+function renderFest(){
+  var it=fEdit?(D.festivals.filter(function(x){return x.id===fEdit})[0]||{}):{};
+  var h='<div class="bar"><b>திருவிழாக்கள் ('+D.festivals.length+')</b><button class="add" data-fa="add">+ சேர்க்க</button></div>';
+  if(fOpen){
+    h+='<div class="frm"><b>'+(fEdit?'திருத்து':'புதிய திருவிழா')+'</b>'+
+    '<label for="g-name">திருவிழா பெயர்</label><input id="g-name" value="'+esc(it.name||'')+'">'+
+    '<label for="g-date">தேதி</label><input id="g-date" type="date" value="'+esc(it.date||'')+'">'+
+    '<label for="g-time">நேரம்</label><input id="g-time" placeholder="காலை 9.00 மணி முதல்" value="'+esc(it.time||'')+'">'+
+    '<label for="g-place">இடம்</label><input id="g-place" value="'+esc(it.place||'')+'">'+
+    '<label>படம்</label><div class="prow"><div class="pv" id="g-pv" style="'+(fPhoto?'background-image:url('+fPhoto+')':'')+'">'+(fPhoto?'':'🪔')+'</div><label class="sb up">📷 படம் தேர்வு<input type="file" accept="image/*" id="g-photo"></label><button class="sb gr" data-fa="rmphoto">நீக்கு</button></div>'+
+    (fErr?'<div class="err">'+fErr+'</div>':'')+
+    '<div class="row"><button class="ok" data-fa="save">சேமி</button><button class="no" data-fa="cancel">ரத்து</button></div></div>';
+  }
+  var L=sortedFest();
+  if(!L.length)h+='<div class="empty">இன்னும் திருவிழாக்கள் சேர்க்கப்படவில்லை.</div>';
+  L.forEach(function(x){
+    h+='<div class="item"><div class="fp" style="'+(x.photo?'background-image:url('+x.photo+')':'')+'">'+(x.photo?'':'🪔')+'</div><div class="t"><b>'+esc(x.name)+'</b><span>'+(x.date?'🗓 '+esc(fmtDate(x.date))+'<br>':'')+(x.time?'🕘 '+esc(x.time)+'<br>':'')+(x.place?'📍 '+esc(x.place):'')+'</span></div><button class="ib" data-fa="edit" data-id="'+x.id+'">திருத்து</button><button class="ib del" data-fa="del" data-id="'+x.id+'">நீக்கு</button></div>';
+  });
+  other.innerHTML=h;
+}
+function renderPhotos(){
+  var h='<div class="bar"><b>புகைப்படங்கள் ('+PH.length+')</b><label class="add up">+ படங்கள் சேர்க்க<input type="file" accept="image/*" multiple id="p-add"></label></div><div id="pmsg" class="empty" style="padding:2px 0"></div>';
+  if(!PH.length)h+='<div class="empty">இன்னும் புகைப்படங்கள் இல்லை.</div>';
+  else{h+='<div class="pg">';for(var i=PH.length-1;i>=0;i--)h+='<div data-pi="'+i+'" style="background-image:url('+PH[i].src+')"></div>';h+='</div>'}
+  other.innerHTML=h;
+}
+function openLb(i){
+  var p=PH[i];if(!p)return;var d=document.createElement('div');d.className='lb';
+  d.innerHTML='<img src="'+p.src+'" alt=""><div class="cap">'+esc(p.cap||'')+'</div><div class="lbb"><button class="sb" data-l="cap">தலைப்பு</button><button class="sb" data-l="del" style="background:#d43b3b">நீக்கு</button><button class="sb gr" data-l="x">மூடு</button></div>';
+  d.addEventListener('click',function(e){
+    var b=e.target.closest('button');
+    if(e.target===d||(b&&b.getAttribute('data-l')==='x')){d.remove();return}
+    if(!b)return;var a=b.getAttribute('data-l');
+    if(a==='cap'){var c=prompt('தலைப்பு',p.cap||'');if(c!==null){p.cap=c.trim();idbSet('photos',PH);d.querySelector('.cap').textContent=p.cap}}
+    else if(a==='del'&&confirm('இந்தப் படத்தை நீக்கவா?')){PH.splice(i,1);idbSet('photos',PH);d.remove();counts();renderPhotos()}
+  });
+  document.body.appendChild(d);
+}
+other.addEventListener('click',function(e){
+  var pi=e.target.closest('[data-pi]');if(pi){openLb(+pi.getAttribute('data-pi'));return}
+  var b=e.target.closest('button');if(!b)return;
+  var fa=b.getAttribute('data-fa'),id=+b.getAttribute('data-id');if(!fa)return;
+  if(fa==='add'){fOpen=true;fEdit=null;fPhoto='';fErr='';renderFest()}
+  else if(fa==='cancel'){fOpen=false;fEdit=null;fErr='';renderFest()}
+  else if(fa==='edit'){var ex=D.festivals.filter(function(x){return x.id===id})[0];fPhoto=(ex&&ex.photo)||'';fOpen=true;fEdit=id;fErr='';renderFest();window.scrollTo(0,0)}
+  else if(fa==='rmphoto'){fPhoto='';gPv()}
+  else if(fa==='del'){if(confirm('இந்தத் திருவிழாவை நீக்கவா?')){D.festivals=D.festivals.filter(function(x){return x.id!==id});save();counts();renderFest()}}
+  else if(fa==='save'){
+    var n=document.getElementById('g-name').value.trim(),o={name:n,date:document.getElementById('g-date').value,time:document.getElementById('g-time').value.trim(),place:document.getElementById('g-place').value.trim(),photo:fPhoto};
+    if(!n){fErr='திருவிழா பெயர் அவசியம்.';renderFest();return}
+    if(fEdit){D.festivals.forEach(function(x){if(x.id===fEdit){x.name=o.name;x.date=o.date;x.time=o.time;x.place=o.place;x.photo=o.photo}})}
+    else{o.id=Date.now();D.festivals.push(o)}
+    fOpen=false;fEdit=null;fErr='';save();counts();renderFest();
+  }
+});
+other.addEventListener('change',function(e){
+  var f=e.target.files&&e.target.files[0];if(!f)return;
+  if(e.target.id==='g-photo'){resizeFile(f,500,0.8,function(d){if(d){fPhoto=d;gPv()}else alert('இந்தப் படத்தைத் திறக்க முடியவில்லை.')});e.target.value=''}
+  else if(e.target.id==='p-add'){
+    var files=Array.prototype.slice.call(e.target.files),n=0,msg=document.getElementById('pmsg');e.target.value='';
+    msg.textContent='படங்கள் ஏற்றப்படுகின்றன… 0/'+files.length;
+    files.forEach(function(fl,i){resizeFile(fl,900,0.78,function(d){
+      if(d)PH.push({id:Date.now()+i,src:d,cap:''});n++;
+      if(n===files.length){idbSet('photos',PH);counts();renderPhotos();if(!idb){var m=document.getElementById('pmsg');if(m)m.textContent='கவனிக்க: இந்த உலாவியில் நிரந்தரச் சேமிப்பு இல்லை.'}}
+      else msg.textContent='படங்கள் ஏற்றப்படுகின்றன… '+n+'/'+files.length;
+    })});
+  }
+});
+document.addEventListener('click',function(e){var t=e.target.closest('[data-tab]');if(t){e.preventDefault();showTab(t.getAttribute('data-tab'))}});
+counts();renderHome();
+var CK='sangam_contact_v1',C={name:'சமூக சங்கம் (தெற்கு தெரு)',addr:'குனியமுத்தூர், கோவை – 641008',phone:'',map:''},cEdit=false;
+try{var cs=JSON.parse(localStorage.getItem(CK));if(cs)for(var ck in cs)C[ck]=cs[ck]}catch(e){}
+function mapUrl(){return C.map&&/^https?:\/\//i.test(C.map)?C.map:'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(C.addr||C.name)}
+function renderContact(){
+  var el=document.getElementById('contact');
+  if(!cEdit){
+    el.innerHTML='<div class="ic">📞</div><div><small>தொடர்புக்கு</small><br><b>'+esc(C.name)+'</b><br><small>'+esc(C.addr)+'</small>'+(C.phone?'<br><a class="tl" href="tel:'+esc(C.phone)+'">'+esc(C.phone)+'</a>':'')+'</div><a class="gm" href="'+esc(mapUrl())+'" target="_blank" rel="noopener">📍 Google Maps</a><button class="ib" id="c-edt" aria-label="தொடர்பு விவரங்களை மாற்று">✏️</button>';
+  }else{
+    el.innerHTML='<div class="frm" style="border:0;padding:0;margin:0;width:100%"><b>தொடர்பு விவரங்கள்</b>'+
+    '<label for="c-name">பெயர்</label><input id="c-name" value="'+esc(C.name)+'">'+
+    '<label for="c-addr">முகவரி</label><input id="c-addr" value="'+esc(C.addr)+'">'+
+    '<label for="c-phone">தொலைபேசி</label><input id="c-phone" type="tel" inputmode="tel" value="'+esc(C.phone)+'">'+
+    '<label for="c-map">Google Maps இணைப்பு</label><input id="c-map" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/…" value="'+esc(C.map)+'">'+
+    '<div class="hint">Google Maps-ல் இடத்தைத் திறந்து Share → Copy link செய்து இங்கே ஒட்டவும். காலியாக விட்டால் முகவரி மூலம் தேடும்.</div>'+
+    '<div class="row"><button class="ok" id="c-save">சேமி</button><button class="no" id="c-cancel">ரத்து</button></div></div>';
+  }
+}
+document.getElementById('contact').addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;
+  if(b.id==='c-edt'){cEdit=true;renderContact()}
+  else if(b.id==='c-cancel'){cEdit=false;renderContact()}
+  else if(b.id==='c-save'){
+    C.name=document.getElementById('c-name').value.trim()||C.name;
+    C.addr=document.getElementById('c-addr').value.trim();
+    C.phone=document.getElementById('c-phone').value.trim();
+    C.map=document.getElementById('c-map').value.trim();
+    try{localStorage.setItem(CK,JSON.stringify(C))}catch(x){}
+    cEdit=false;renderContact();
+  }
+});
+renderContact();
+var SK='sangam_about_v1',A={name:'சமூக சங்கம் (தெற்கு தெரு)',motto:'ஒற்றுமை • முன்னேற்றம்',year:'',reg:'',about:'',aims:''},aEdit=false;
+try{var as_=JSON.parse(localStorage.getItem(SK));if(as_)for(var ak in as_)A[ak]=as_[ak]}catch(e){}
+function applyName(){var h=document.querySelector('#hero h1');if(h)h.innerHTML=esc(A.name).replace(' (','<br>(')}
+function renderAbout(){
+  var h='';
+  if(aEdit){
+    h='<div class="frm"><b>சங்கம் – திருத்து</b>'+
+    '<label for="a-name">சங்கத்தின் பெயர்</label><input id="a-name" value="'+esc(A.name)+'">'+
+    '<label for="a-motto">குறிக்கோள் வாசகம்</label><input id="a-motto" value="'+esc(A.motto)+'">'+
+    '<label for="a-year">தொடங்கிய ஆண்டு</label><input id="a-year" inputmode="numeric" value="'+esc(A.year)+'">'+
+    '<label for="a-reg">பதிவு எண்</label><input id="a-reg" value="'+esc(A.reg)+'">'+
+    '<label for="a-about">சங்கம் பற்றி</label><textarea id="a-about">'+esc(A.about)+'</textarea>'+
+    '<label for="a-aims">நோக்கங்கள் (ஒரு வரிக்கு ஒன்று)</label><textarea id="a-aims">'+esc(A.aims)+'</textarea>'+
+    '<div class="row"><button class="ok" data-aa="save">சேமி</button><button class="no" data-aa="cancel">ரத்து</button></div></div>';
+  }else{
+    var aims=A.aims.split('\n').map(function(x){return x.trim()}).filter(Boolean);
+    h='<div class="bar"><b>சங்கம்</b><button class="add" data-aa="edit">✏️ திருத்து</button></div><div class="ab"><h2>'+esc(A.name)+'</h2>'+
+    (A.motto?'<div class="mo">'+esc(A.motto)+'</div>':'')+
+    (A.year?'<div class="mt">🗓 தொடக்கம்: '+esc(A.year)+'</div>':'')+
+    (A.reg?'<div class="mt">📄 பதிவு எண்: '+esc(A.reg)+'</div>':'')+
+    (A.about?'<h4>சங்கம் பற்றி</h4><p>'+esc(A.about)+'</p>':'')+
+    (aims.length?'<h4>நோக்கங்கள்</h4><ul>'+aims.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'')+
+    ((A.about||aims.length)?'':'<div class="empty">சங்கம் பற்றிய விவரங்கள் இன்னும் சேர்க்கப்படவில்லை. "✏️ திருத்து" அழுத்தவும்.</div>')+'</div>';
+  }
+  other.innerHTML=h;
+}
+other.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var a=b.getAttribute('data-aa');if(!a)return;
+  if(a==='edit'){aEdit=true;renderAbout();window.scrollTo(0,0)}
+  else if(a==='cancel'){aEdit=false;renderAbout()}
+  else if(a==='save'){
+    A.name=document.getElementById('a-name').value.trim()||A.name;
+    A.motto=document.getElementById('a-motto').value.trim();
+    A.year=document.getElementById('a-year').value.trim();
+    A.reg=document.getElementById('a-reg').value.trim();
+    A.about=document.getElementById('a-about').value.trim();
+    A.aims=document.getElementById('a-aims').value.trim();
+    try{localStorage.setItem(SK,JSON.stringify(A))}catch(x){}
+    aEdit=false;applyName();renderAbout();
+  }
+});
+applyName();
+var mOpen=false,mEdit=null,mErr='',mQ='';
+function ageFrom(d){if(!d)return'';var p=d.split('-');if(p.length<3)return'';var t=new Date(),a=t.getFullYear()-(+p[0]),m=t.getMonth()+1;if(m<+p[1]||(m===+p[1]&&t.getDate()<+p[2]))a--;return(a>=0&&a<150)?String(a):''}
+function memAge(x){return x.dob?ageFrom(x.dob):(x.age||'')}
+function nextNo(){var m=0;D.members.forEach(function(x){var n=parseInt(x.no,10);if(n>m)m=n});return String(m+1)}
+function renderMembers(){
+  var it=mEdit?(D.members.filter(function(x){return x.id===mEdit})[0]||{}):{};
+  var h='<div class="bar"><b>உறுப்பினர்கள் (<span id="m-cnt">'+D.members.length+'</span>)</b><button class="add" data-ma="add">+ சேர்க்க</button></div>';
+  if(mOpen){
+    var no=mEdit?(it.no||''):nextNo();
+    h+='<div class="frm"><b>'+(mEdit?'திருத்து':'புதிய உறுப்பினர்')+'</b>'+
+    '<label for="m-no">உறுப்பினர் எண்</label><input id="m-no" inputmode="numeric" value="'+esc(no)+'">'+
+    '<label for="m-name">உறுப்பினர் பெயர்</label><input id="m-name" value="'+esc(it.name||'')+'">'+
+    '<label for="m-father">தந்தை பெயர்</label><input id="m-father" value="'+esc(it.father||'')+'">'+
+    '<label for="m-mother">தாய் பெயர்</label><input id="m-mother" value="'+esc(it.mother||'')+'">'+
+    '<label for="m-wife">மனைவி பெயர்</label><input id="m-wife" value="'+esc(it.wife||'')+'">'+
+    '<label for="m-dob">பிறந்தநாள்</label><input id="m-dob" type="date" value="'+esc(it.dob||'')+'">'+
+    '<label for="m-age">வயது (பிறந்தநாள் தந்தால் தானாக வரும்)</label><input id="m-age" inputmode="numeric" value="'+esc(memAge(it))+'">'+
+    (mErr?'<div class="err">'+mErr+'</div>':'')+
+    '<div class="row"><button class="ok" data-ma="save">சேமி</button><button class="no" data-ma="cancel">ரத்து</button></div></div>';
+  }
+  h+='<input class="srch" id="m-q" type="search" placeholder="🔍 பெயர் / எண் தேடுக" value="'+esc(mQ)+'"><div id="m-list"></div>';
+  other.innerHTML=h;renderMList();
+}
+function renderMList(){
+  var q=mQ.trim().toLowerCase(),L=D.members.slice().sort(function(a,b){
+    var x=parseInt(a.no,10),y=parseInt(b.no,10);if(isNaN(x))x=1e9;if(isNaN(y))y=1e9;return x-y||String(a.name).localeCompare(b.name)});
+  if(q)L=L.filter(function(x){return[x.no,x.name,x.father,x.mother,x.wife].join(' ').toLowerCase().indexOf(q)>-1});
+  var h='';
+  if(!L.length)h='<div class="empty">'+(D.members.length?'பொருந்தும் உறுப்பினர் இல்லை.':'இன்னும் உறுப்பினர்கள் சேர்க்கப்படவில்லை.')+'</div>';
+  L.forEach(function(x){
+    var ag=memAge(x);
+    h+='<div class="item"><div class="av">'+esc((x.name||'?').charAt(0))+'</div><div class="t"><b>'+(x.no?esc(x.no)+'. ':'')+esc(x.name)+'</b><span>'+
+    (x.father?'தந்தை: '+esc(x.father)+'<br>':'')+(x.mother?'தாய்: '+esc(x.mother)+'<br>':'')+(x.wife?'மனைவி: '+esc(x.wife)+'<br>':'')+
+    (x.dob?'🎂 '+esc(fmtDate(x.dob)):'')+(ag?(x.dob?' · ':'')+'வயது: '+esc(ag):'')+'</span></div>'+
+    '<div class="bt"><button class="ib" data-ma="edit" data-id="'+x.id+'">திருத்து</button><button class="ib del" data-ma="del" data-id="'+x.id+'">நீக்கு</button></div></div>';
+  });
+  document.getElementById('m-list').innerHTML=h;
+}
+other.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var a=b.getAttribute('data-ma');if(!a)return;var id=+b.getAttribute('data-id');
+  if(a==='add'){mOpen=true;mEdit=null;mErr='';renderMembers();window.scrollTo(0,0)}
+  else if(a==='cancel'){mOpen=false;mEdit=null;mErr='';renderMembers()}
+  else if(a==='edit'){mOpen=true;mEdit=id;mErr='';renderMembers();window.scrollTo(0,0)}
+  else if(a==='del'){if(confirm('இந்த உறுப்பினரை நீக்கவா?')){D.members=D.members.filter(function(x){return x.id!==id});save();counts();renderMembers()}}
+  else if(a==='save'){
+    var v=function(k){return document.getElementById('m-'+k).value.trim()};
+    var o={no:v('no'),name:v('name'),father:v('father'),mother:v('mother'),wife:v('wife'),dob:document.getElementById('m-dob').value,age:v('age')};
+    if(o.dob)o.age=ageFrom(o.dob);
+    if(!o.name){mErr='உறுப்பினர் பெயர் அவசியம்.';renderMembers();return}
+    if(o.no&&D.members.some(function(x){return x.no===o.no&&x.id!==mEdit})){mErr='இந்த உறுப்பினர் எண் ஏற்கெனவே உள்ளது.';renderMembers();return}
+    if(mEdit){D.members.forEach(function(x){if(x.id===mEdit){for(var k in o)x[k]=o[k]}})}
+    else{o.id=Date.now();D.members.push(o)}
+    mOpen=false;mEdit=null;mErr='';save();counts();renderMembers();
+  }
+});
+function mInput(e){
+  if(e.target.id==='m-q'){mQ=e.target.value;renderMList()}
+  else if(e.target.id==='m-dob'){var a=document.getElementById('m-age');if(a)a.value=ageFrom(e.target.value)}
+}
+other.addEventListener('input',mInput);other.addEventListener('change',mInput);
+counts();
+var PK='sangam_pw_v1',PW='',unlocked=false;
+try{PW=localStorage.getItem(PK)||'';unlocked=sessionStorage.getItem('sangam_unlocked')==='1'}catch(e){}
+function hashPw(str){var h1=0xdeadbeef,h2=0x41c6ce57,i,ch;str='sg$'+str;for(i=0;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return String(4294967296*(2097151&h2)+(h1>>>0))}
+function applyLock(){document.body.classList.toggle('lock',!!PW&&!unlocked)}
+function smsg(id,t,ok){var el=document.getElementById(id);if(!el)return;el.textContent=t;el.style.color=ok?'#2f9e54':'#d43b3b';el.style.fontSize='13px';el.style.marginTop='6px'}
+function renderSettings(){
+  var h='';
+  if(PW&&!unlocked){
+    h='<div class="frm"><h3>🔒 நிர்வாகி உள்நுழைவு</h3><p>தரவைத் திருத்த, நிர்வாகி கடவுச்சொல்லை உள்ளிடவும்.</p><input id="s-pw" type="password" placeholder="கடவுச்சொல்" autocomplete="off"><div id="s-err"></div><button class="sb fw" data-sa="unlock">திற</button></div>';
+  }else{
+    h='<div class="frm"><h3>💾 முழு தரவு காப்பு (Backup / Restore)</h3><p>இந்தக் கோப்பை Phone/Google Drive-இல் பாதுகாப்பாக வைக்கவும். வேறு Phone-க்கு மாறும்போது இதைப் பயன்படுத்தி தரவை அப்படியே கொண்டுவரலாம்.</p>'+
+    '<button class="sb fw" data-sa="backup">⬇ முழு தரவு காப்பு பதிவிறக்கு (JSON)</button><div id="s-m1"></div>'+
+    '<hr style="border:0;border-top:1px solid var(--line);margin:16px 0"><h3>காப்பு கோப்பிலிருந்து மீட்டமை</h3>'+
+    '<label class="sb gr up">📁 Choose File<input type="file" id="s-file"></label> <span id="s-fn" class="hint">கோப்பு தேர்வு செய்யப்படவில்லை</span>'+
+    '<button class="sb fw" data-sa="restore">⬆ மீட்டமை</button><div id="s-m2"></div></div>';
+    if(PW){
+      h+='<div class="frm"><h3>🔑 நிர்வாகி கடவுச்சொல்</h3><p>பூட்டு இயக்கத்தில் உள்ளது. பூட்டியிருக்கும்போது பார்வை மட்டும் செய்ய முடியும்.</p>'+
+      '<label for="s-cur">தற்போதைய கடவுச்சொல்</label><input id="s-cur" type="password" autocomplete="off">'+
+      '<label for="s-new">புதிய கடவுச்சொல் (குறைந்தது 4 எழுத்துகள்)</label><input id="s-new" type="password" autocomplete="off">'+
+      '<label for="s-new2">புதியதை உறுதிசெய்</label><input id="s-new2" type="password" autocomplete="off"><div id="s-m3"></div>'+
+      '<button class="sb fw" data-sa="chpw">கடவுச்சொல் மாற்று</button><button class="sb fw gr" data-sa="lock">🔒 இப்போதே பூட்டு</button><button class="sb fw gr" data-sa="rmpw" style="color:#d43b3b">கடவுச்சொல்லை நீக்கு</button></div>';
+    }else{
+      h+='<div class="frm"><h3>🔑 நிர்வாகி கடவுச்சொல்</h3><p>கடவுச்சொல் அமைத்தால், அது இல்லாமல் யாரும் தரவைச் சேர்க்க/திருத்த/நீக்க முடியாது.</p>'+
+      '<label for="s-new">புதிய கடவுச்சொல் (குறைந்தது 4 எழுத்துகள்)</label><input id="s-new" type="password" autocomplete="off">'+
+      '<label for="s-new2">உறுதிசெய்</label><input id="s-new2" type="password" autocomplete="off"><div id="s-m3"></div>'+
+      '<button class="sb fw" data-sa="setpw">கடவுச்சொல் அமை</button></div>';
+    }
+    h+='<div class="hint" style="padding:0 4px 12px">குறிப்பு: இது ஆஃப்லைன் HTML கோப்பு என்பதால் இந்தக் கடவுச்சொல் சாதாரணப் பயனர்கள் தவறுதலாக மாற்றுவதைத் தடுக்கும் பூட்டு மட்டுமே. கடவுச்சொல்லை மறந்தால் மீட்க வழியில்லை; எனவே காப்புக் கோப்பை அவ்வப்போது சேமித்து வைக்கவும்.</div>';
+  }
+  other.innerHTML=h;
+}
+var pendFile=null;
+function applyData(o){
+  var d=o.data,k;
+  D={admins:d.admins||[],committee:d.committee||[],festivals:d.festivals||[],members:d.members||[]};
+  PH=o.photos||[];
+  if(o.contact)for(k in o.contact)C[k]=o.contact[k];
+  if(o.about)for(k in o.about)A[k]=o.about[k];
+  IM=o.banner||{};
+  if(typeof o.pw==='string')PW=o.pw;
+  var ok=true;
+  try{localStorage.setItem(KEY,JSON.stringify(D));localStorage.setItem(CK,JSON.stringify(C));localStorage.setItem(SK,JSON.stringify(A));localStorage.setItem(IK,JSON.stringify(IM));if(PW)localStorage.setItem(PK,PW);else localStorage.removeItem(PK)}catch(e){ok=false}
+  idbSet('photos',PH);
+  applyImg();applyName();renderContact();counts();renderHome();applyLock();
+  return ok;
+}
+function lockNow(){
+  unlocked=false;try{sessionStorage.removeItem('sangam_unlocked')}catch(e){}
+  formOpen=false;editId=null;fOpen=false;fEdit=null;mOpen=false;mEdit=null;aEdit=false;cEdit=false;
+  renderContact();applyLock();showTab('முகப்பு');
+}
+other.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var a=b.getAttribute('data-sa');if(!a)return;
+  var v=function(id){var el=document.getElementById(id);return el?el.value:''};
+  if(a==='unlock'){
+    if(hashPw(v('s-pw'))===PW){unlocked=true;try{sessionStorage.setItem('sangam_unlocked','1')}catch(x){}applyLock();renderSettings()}
+    else smsg('s-err','கடவுச்சொல் தவறு.',false);
+  }else if(a==='backup'){
+    var o={app:'sangam',v:1,date:new Date().toISOString(),data:D,photos:PH,contact:C,about:A,banner:IM,pw:PW};
+    var bl=new Blob([JSON.stringify(o)],{type:'application/json'}),u=URL.createObjectURL(bl),l=document.createElement('a');
+    l.href=u;l.download='sangam-backup-'+todayStr()+'.json';document.body.appendChild(l);l.click();l.remove();
+    setTimeout(function(){URL.revokeObjectURL(u)},5000);
+    smsg('s-m1','✔ காப்புக் கோப்பு பதிவிறக்கப்பட்டது ('+Math.round(bl.size/1024)+' KB).',true);
+  }else if(a==='restore'){
+    if(!pendFile){smsg('s-m2','முதலில் காப்புக் கோப்பைத் தேர்ந்தெடுக்கவும்.',false);return}
+    var fr=new FileReader();
+    fr.onerror=function(){smsg('s-m2','கோப்பைப் படிக்க முடியவில்லை.',false)};
+    fr.onload=function(){
+      var o;try{o=JSON.parse(fr.result)}catch(x){o=null}
+      if(!o||o.app!=='sangam'||!o.data){smsg('s-m2','இது சரியான காப்புக் கோப்பு அல்ல.',false);return}
+      if(!confirm('தற்போதுள்ள அனைத்துத் தரவும் இந்தக் காப்புக் கோப்பால் மாற்றப்படும். தொடரவா?'))return;
+      var ok=applyData(o);
+      smsg('s-m2',ok?'✔ தரவு வெற்றிகரமாக மீட்டமைக்கப்பட்டது.':'மீட்டமைக்கப்பட்டது, ஆனால் நிரந்தரமாகச் சேமிக்க இடம் போதவில்லை.',ok);
+    };
+    fr.readAsText(pendFile);
+  }else if(a==='setpw'||a==='chpw'){
+    if(a==='chpw'&&hashPw(v('s-cur'))!==PW){smsg('s-m3','தற்போதைய கடவுச்சொல் தவறு.',false);return}
+    var n1=v('s-new'),n2=v('s-new2');
+    if(n1.length<4){smsg('s-m3','குறைந்தது 4 எழுத்துகள் தேவை.',false);return}
+    if(n1!==n2){smsg('s-m3','இரு கடவுச்சொற்களும் பொருந்தவில்லை.',false);return}
+    PW=hashPw(n1);try{localStorage.setItem(PK,PW)}catch(x){}
+    unlocked=true;try{sessionStorage.setItem('sangam_unlocked','1')}catch(x){}
+    renderSettings();smsg('s-m3','✔ கடவுச்சொல் அமைக்கப்பட்டது.',true);
+  }else if(a==='rmpw'){
+    if(hashPw(v('s-cur'))!==PW){smsg('s-m3','நீக்க, தற்போதைய கடவுச்சொல்லை உள்ளிடவும்.',false);return}
+    if(confirm('கடவுச்சொல் பூட்டை நீக்கவா?')){PW='';try{localStorage.removeItem(PK)}catch(x){}applyLock();renderSettings()}
+  }else if(a==='lock'){lockNow()}
+});
+other.addEventListener('change',function(e){
+  if(e.target.id!=='s-file')return;
+  pendFile=e.target.files&&e.target.files[0]||null;
+  var n=document.getElementById('s-fn');if(n)n.textContent=pendFile?pendFile.name:'கோப்பு தேர்வு செய்யப்படவில்லை';
+});
+other.addEventListener('keydown',function(e){if(e.key==='Enter'&&e.target.id==='s-pw'){var b=other.querySelector('[data-sa="unlock"]');if(b)b.click()}});
+applyLock();
+var PK='sangam_pw_v1',SALT='sangam#ta',pw='',ADMIN=false;
+try{pw=localStorage.getItem(PK)||''}catch(e){}
+ADMIN=!pw;try{if(pw&&sessionStorage.getItem('sangam_adm')==='1')ADMIN=true}catch(e){}
+function c53(str,seed){var h1=0xdeadbeef^seed,h2=0x41c6ce57^seed,i,ch;for(i=0;i<str.length;i++){ch=str.charCodeAt(i);h1=Math.imul(h1^ch,2654435761);h2=Math.imul(h2^ch,1597334677)}h1=Math.imul(h1^(h1>>>16),2246822507)^Math.imul(h2^(h2>>>13),3266489909);h2=Math.imul(h2^(h2>>>16),2246822507)^Math.imul(h1^(h1>>>13),3266489909);return 4294967296*(2097151&h2)+(h1>>>0)}
+function pwHash(x){return c53(SALT+x,0)+'-'+c53(x+SALT,7)}
+function setAdmin(v){ADMIN=v;document.body.classList.toggle('adm',v);try{if(v)sessionStorage.setItem('sangam_adm','1');else sessionStorage.removeItem('sangam_adm')}catch(e){}}
+function storePw(h){pw=h;try{if(h)localStorage.setItem(PK,h);else localStorage.removeItem(PK)}catch(e){}}
+var sMsg='';
+function renderSettings(){
+  var h='';
+  if(!pw){
+    h+='<div class="frm sf"><h3>🔒 நிர்வாகி கடவுச்சொல்</h3><p>கடவுச்சொல் அமைத்தால், அது தெரிந்தவர்கள் மட்டுமே சேர்க்க / திருத்த / நீக்க முடியும். மற்றவர்கள் பார்க்க மட்டும் முடியும்.</p>'+
+    '<label for="s-new">புதிய கடவுச்சொல் (குறைந்தது 4 எழுத்து)</label><input id="s-new" type="password" autocomplete="new-password"><label for="s-new2">மீண்டும் உள்ளிடுக</label><input id="s-new2" type="password" autocomplete="new-password"><button class="big" data-sa="setpw">கடவுச்சொல் அமை</button></div>';
+  }else if(!ADMIN){
+    h+='<div class="frm sf"><h3>🔒 நிர்வாகி உள்நுழைவு</h3><p>திருத்தும் வசதிகளைப் பயன்படுத்த கடவுச்சொல்லை உள்ளிடவும்.</p><label for="s-pw">கடவுச்சொல்</label><input id="s-pw" type="password" autocomplete="current-password"><button class="big" data-sa="login">உள்நுழை</button></div>';
+  }else{
+    h+='<div class="frm sf"><h3>✅ நிர்வாகி பயன்முறை</h3><p>திருத்தும் வசதிகள் இயக்கத்தில் உள்ளன.</p><button class="big gr" data-sa="logout">வெளியேறு</button>'+
+    '<h3 style="margin-top:16px">கடவுச்சொல் மாற்று</h3><label for="s-old">தற்போதைய கடவுச்சொல்</label><input id="s-old" type="password"><label for="s-new">புதிய கடவுச்சொல்</label><input id="s-new" type="password"><label for="s-new2">மீண்டும் உள்ளிடுக</label><input id="s-new2" type="password"><button class="big gr" data-sa="chpw">மாற்று</button>'+
+    (pw?'<button class="big gr" data-sa="rmpw">கடவுச்சொல்லை நீக்கு</button>':'')+'</div>';
+  }
+  if(ADMIN){
+    h+='<div class="frm sf"><h3>💾 முழு தரவு காப்பு (Backup / Restore)</h3><p>இந்தக் கோப்பை Phone / Google Drive-இல் பாதுகாப்பாக வையுங்கள். வேறு Phone-க்கு மாறும்போது இதைப் பயன்படுத்தி தரவை அப்படியே கொண்டுவரலாம்.</p>'+
+    '<button class="big" data-sa="backup">⬇ முழு தரவு காப்பு பதிவிறக்கு (JSON)</button>'+
+    '<h3 style="margin-top:18px">காப்பு கோப்பிலிருந்து மீட்டமை</h3><div class="drop"><input type="file" id="s-file" accept=".json,application/json"><div id="s-fn" style="margin-top:6px">கோப்பு தேர்வு செய்யப்படவில்லை</div></div>'+
+    '<button class="big" data-sa="restore">⬆ மீட்டமை</button></div>';
+  }
+  h+='<div class="sm" id="s-msg">'+esc(sMsg)+'</div>';
+  other.innerHTML=h;
+}
+function say(m){sMsg=m;var el=document.getElementById('s-msg');if(el)el.textContent=m}
+function dlBackup(){
+  var json=JSON.stringify({app:'sangam',v:1,at:new Date().toISOString(),D:D,banner:IM.banner||'',contact:C,about:A,photos:PH,pw:pw});
+  var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([json],{type:'application/json'}));a.download='sangam-backup-'+todayStr()+'.json';
+  document.body.appendChild(a);a.click();setTimeout(function(){URL.revokeObjectURL(a.href);a.remove()},1500);
+  say('✔ காப்புக் கோப்பு பதிவிறக்கப்படுகிறது ('+D.members.length+' உறுப்பினர்கள், '+PH.length+' படங்கள்).');
+}
+function doRestore(){
+  var f=document.getElementById('s-file').files[0];if(!f){say('கோப்பு தேர்வு செய்யப்படவில்லை.');return}
+  var fr=new FileReader();fr.onerror=function(){say('கோப்பைப் படிக்க முடியவில்லை.')};
+  fr.onload=function(){
+    var o;try{o=JSON.parse(fr.result)}catch(x){say('இது சரியான காப்புக் கோப்பு அல்ல.');return}
+    if(!o||o.app!=='sangam'||!o.D||!o.D.admins||!o.D.committee){say('இது இந்த ஆப்பின் காப்புக் கோப்பு அல்ல.');return}
+    if(!confirm('தற்போதைய தரவு முழுவதும் இந்தக் காப்புக் கோப்பால் மாற்றப்படும். தொடரவா?'))return;
+    D=o.D;D.festivals=D.festivals||[];D.members=D.members||[];save();
+    IM=o.banner?{banner:o.banner}:{};saveImg();
+    if(o.contact){C=o.contact;try{localStorage.setItem(CK,JSON.stringify(C))}catch(x){}}
+    if(o.about){A=o.about;try{localStorage.setItem(SK,JSON.stringify(A))}catch(x){}}
+    PH=o.photos||[];idbSet('photos',PH);
+    if(typeof o.pw==='string'){storePw(o.pw)}
+    applyImg();renderContact();applyName();counts();renderHome();
+    say('✔ மீட்டமைக்கப்பட்டது: '+D.members.length+' உறுப்பினர்கள், '+PH.length+' படங்கள்.');
+  };
+  fr.readAsText(f);
+}
+other.addEventListener('click',function(e){
+  var b=e.target.closest('button');if(!b)return;var a=b.getAttribute('data-sa');if(!a)return;
+  var g=function(i){var el=document.getElementById(i);return el?el.value:''};
+  if(a==='setpw'){var n=g('s-new');if(n.length<4){say('குறைந்தது 4 எழுத்துகள் வேண்டும்.');return}if(n!==g('s-new2')){say('இரண்டு கடவுச்சொற்களும் பொருந்தவில்லை.');return}storePw(pwHash(n));setAdmin(true);sMsg='✔ கடவுச்சொல் அமைக்கப்பட்டது. இதை மறக்காமல் எழுதி வையுங்கள்.';renderSettings()}
+  else if(a==='login'){if(pwHash(g('s-pw'))===pw){setAdmin(true);sMsg='';renderSettings()}else say('கடவுச்சொல் தவறு.')}
+  else if(a==='logout'){setAdmin(false);sMsg='';renderSettings()}
+  else if(a==='chpw'){if(pwHash(g('s-old'))!==pw){say('தற்போதைய கடவுச்சொல் தவறு.');return}var n2=g('s-new');if(n2.length<4){say('குறைந்தது 4 எழுத்துகள் வேண்டும்.');return}if(n2!==g('s-new2')){say('புதிய கடவுச்சொற்கள் பொருந்தவில்லை.');return}storePw(pwHash(n2));sMsg='✔ கடவுச்சொல் மாற்றப்பட்டது.';renderSettings()}
+  else if(a==='rmpw'){if(confirm('கடவுச்சொல்லை நீக்கினால் எவரும் திருத்த முடியும். நீக்கவா?')){storePw('');setAdmin(true);sMsg='கடவுச்சொல் நீக்கப்பட்டது.';renderSettings()}}
+  else if(a==='backup')dlBackup();
+  else if(a==='restore')doRestore();
+});
+other.addEventListener('change',function(e){if(e.target.id==='s-file'){var fn=document.getElementById('s-fn');if(fn)fn.textContent=e.target.files[0]?e.target.files[0].name:'கோப்பு தேர்வு செய்யப்படவில்லை'}});
+setAdmin(ADMIN);
+</script>
+</body>
+</html>
